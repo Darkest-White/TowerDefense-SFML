@@ -10,6 +10,7 @@ class GameObject
 protected:
 	int id;
 	Vector2 position;
+	float size_radius;
 
 public:
 	static int GetNewID();

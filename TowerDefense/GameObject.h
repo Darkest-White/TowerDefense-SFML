@@ -1,4 +1,6 @@
-#include "MSG.h"
+#pragma once
+
+struct MSG;
 
 struct Vector2
 {
@@ -25,6 +27,6 @@ public:
 	int GetID();
 
 	virtual void Update(float dt) = 0;
-	virtual void sendMSG(MSG m) = 0;
+	virtual void sendMSG(MSG* m) = 0;
 	void Draw();
 };

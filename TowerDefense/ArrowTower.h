@@ -9,7 +9,7 @@ public:
 	~ArrowTower();
 
 	void Update(float dt);
-	void sendMSG(MSG m);
+	void sendMSG(MSG* m);
 	void Action();
 };
 

@@ -13,6 +13,6 @@ public:
 	~Arrow();
 
 	void Update(float dt);
-	void sendMSG(MSG m);
+	void sendMSG(MSG* m);
 };
 

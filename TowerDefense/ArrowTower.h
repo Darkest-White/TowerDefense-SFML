@@ -4,12 +4,13 @@
 class ArrowTower : public Tower
 {
 public:
-	ArrowTower();
-	ArrowTower(const ArrowTower&);
+	GameObject* target_locked = nullptr;
+
+public:
+	ArrowTower(Vector2f position, int level);
 	~ArrowTower();
 
 	void Update(float dt);
-	void sendMSG(MSG* m);
+	void SendMSG(MSG* m);
 	void Action();
 };
-

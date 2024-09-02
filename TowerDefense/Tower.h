@@ -1,3 +1,4 @@
+#pragma once
 #include "GameObject.h"
 
 class Tower : public GameObject
@@ -11,8 +12,8 @@ protected:
 	float action_range;
 
 public:
-	Tower();
-	Tower(const Tower&);
+	Tower(Vector2f position, float size_radius, Texture* texture, int level, int cost,
+		float cooldown_time, float action_range);
 	virtual ~Tower();
 	virtual void Action() = 0;
 };

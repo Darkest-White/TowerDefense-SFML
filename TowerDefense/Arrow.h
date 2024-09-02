@@ -1,18 +1,15 @@
 #pragma once
 #include "Projectile.h"
-#include "Enemy.h"
 
 class Arrow : public Projectile
 {
 protected:
-	Enemy* target_enemy;
+	GameObject* target;
 
 public:
-	Arrow();
-	Arrow(const Arrow&);
+	Arrow(Vector2f position, float damage, float velocity, GameObject* target);
 	~Arrow();
 
 	void Update(float dt);
-	void sendMSG(MSG* m);
+	void SendMSG(MSG* m);
 };
-

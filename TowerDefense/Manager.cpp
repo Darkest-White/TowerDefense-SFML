@@ -1,17 +1,10 @@
 #include "Manager.h"
-#include <algorithm>
-
 
 Manager* Manager::instance = nullptr;
 
 Manager::Manager() : objs(), msgs()
 {
 
-}
-
-Manager::Manager(const Manager&)
-{
-	;
 }
 
 Manager::~Manager()
@@ -42,8 +35,11 @@ void Manager::Update(float dt)
 		obj->Update(dt);
 	}
 
-	for (auto m : msgs)
+	MSG* m;	
+	while(!msgs.empty())
 	{
+		m = msgs.front();
+		msgs.pop_front();
 		switch (m->type)
 		{
 		case MsgType::Death:
@@ -59,25 +55,34 @@ void Manager::Update(float dt)
 		} break;
 		}
 
-		if (m->type == MsgType::Move || 
+		if (m->type == MsgType::Move ||
 			m->type == MsgType::DealDamage)
 		{
 			for (auto obj : objs)
 			{
-				obj->sendMSG(m);
+				obj->SendMSG(m);
 			}
 		}
+
+		delete m;
 	}
 }
 
 void Manager::SendMsg(MSG* m)
 {
-	this->~Manager();
 	msgs.push_back(m);
+}
+
+void Manager::DrawObjects(RenderWindow& window)
+{
+	for (auto obj : objs)
+	{
+		obj->Draw(window);
+	}
 }
 
 void Manager::Destroy()
 {
-	if (instance != nullptr) delete instance;
+	if (instance) delete instance;
 	instance = nullptr;
 }

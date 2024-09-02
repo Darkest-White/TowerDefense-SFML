@@ -1,72 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Исходные файлы">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Файлы заголовков">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Файлы ресурсов">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Towers">
+      <UniqueIdentifier>{c125ce89-9c15-41ba-8100-761293821adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Projectiles">
+      <UniqueIdentifier>{3c958500-2b93-446f-a1d4-401064a0c835}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies">
+      <UniqueIdentifier>{0c47ad45-2c49-47b3-93e1-c10895bdaa6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basic Classes">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{db8b6da9-742a-47ee-ace9-47cc0d108ad4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObject.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Basic Classes</Filter>
     </ClCompile>
     <ClCompile Include="MSG.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Tower.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Projectile.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Arrow.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="ArrowTower.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Basic Classes</Filter>
     </ClCompile>
     <ClCompile Include="Manager.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Basic Classes</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Basic Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrowTower.cpp">
+      <Filter>Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow.cpp">
+      <Filter>Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Tower.cpp">
+      <Filter>Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorMath.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameObject.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="MSG.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Tower.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="Arrow.h">
+      <Filter>Projectiles</Filter>
     </ClInclude>
     <ClInclude Include="Projectile.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Arrow.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Projectiles</Filter>
     </ClInclude>
     <ClInclude Include="ArrowTower.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Tower.h">
+      <Filter>Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Basic Classes</Filter>
     </ClInclude>
     <ClInclude Include="Manager.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Basic Classes</Filter>
     </ClInclude>
+    <ClInclude Include="MSG.h">
+      <Filter>Basic Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorMath.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -11,8 +11,7 @@ struct MSG
 	{
 		struct
 		{
-			Vector2 old_position;
-
+			Vector2f old_position;
 		}move;
 
 		struct
@@ -31,6 +30,8 @@ struct MSG
 			float damage;
 			GameObject* to_who;
 			GameObject* by_whom;
-		}dealDamage;
+		}deal_damage;
 	};
+
+	MSG();
 };

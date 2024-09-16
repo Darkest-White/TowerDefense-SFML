@@ -29,7 +29,7 @@
     <ClCompile Include="MSG.cpp">
       <Filter>Basic Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Manager.cpp">
+    <ClCompile Include="GameManager.cpp">
       <Filter>Basic Classes</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
@@ -53,6 +53,12 @@
     <ClCompile Include="VectorMath.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Boar.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arrow.h">
@@ -73,7 +79,7 @@
     <ClInclude Include="GameObject.h">
       <Filter>Basic Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Manager.h">
+    <ClInclude Include="GameManager.h">
       <Filter>Basic Classes</Filter>
     </ClInclude>
     <ClInclude Include="MSG.h">
@@ -81,6 +87,12 @@
     </ClInclude>
     <ClInclude Include="VectorMath.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Boar.h">
+      <Filter>Enemies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

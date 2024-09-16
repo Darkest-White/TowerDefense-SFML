@@ -26,8 +26,8 @@ int GameObject::GetLastID()
 	return lastID;
 }
 
-GameObject::GameObject(Vector2f position, float size_radius, Texture* texture)
-	: position(position), size_radius(size_radius), sprite(*texture)
+GameObject::GameObject(Vector2f position, float size_radius, Texture* texture, ObjType type)
+	: position(position), size_radius(size_radius), sprite(*texture), type(type)
 {
 	Vector2u texture_size = sprite.getTexture()->getSize();
 	sprite.setOrigin(texture_size.x / 2, texture_size.y / 2);
@@ -56,6 +56,11 @@ Vector2f GameObject::GetPosition()
 int GameObject::GetID()
 {
 	return id;
+}
+
+ObjType GameObject::GetType()
+{
+	return type;
 }
 
 void GameObject::Draw(RenderWindow& window)

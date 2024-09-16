@@ -1,15 +1,18 @@
 #pragma once
 #include<iostream>
 #include<SFML/Graphics.hpp>
+#include "Path.h"
 using namespace std;
 using namespace sf;
 
 struct MSG;
+enum class ObjType;
 
 class GameObject
 {
 private:
 	static int lastID;
+	ObjType type;
 
 protected:
 	int id;
@@ -23,7 +26,7 @@ public:
 	static int GetNewID();
 	static int GetLastID();
 
-	GameObject(Vector2f position, float size_radius, Texture* texture);
+	GameObject(Vector2f position, float size_radius, Texture* texture, ObjType type);
 	GameObject(const GameObject&);
 	virtual ~GameObject();
 
@@ -31,6 +34,7 @@ public:
 	Vector2f GetPosition();
 
 	int GetID();
+	ObjType GetType();
 
 	virtual void Update(float dt) = 0;
 	virtual void SendMSG(MSG* m) = 0;

@@ -1,15 +1,16 @@
 #include<iostream>
 #include<SFML/Graphics.hpp>
-#include"Manager.h"
+#include "GameManager.h"
 #include"ArrowTower.h"
+#include"Path.h"
 using namespace std;
 using namespace sf;
 
 int main()
 {
-	RenderWindow window(VideoMode(800, 800), "TowerDefense");
+	RenderWindow window(VideoMode(1600, 900), "TowerDefense");
 
-	Manager* MGR = Manager::GetInstance();
+	GameManager* MGR = GameManager::GetInstance();
 
 	MSG* msg = new MSG;
 	msg->type = MsgType::Create;
@@ -29,13 +30,16 @@ int main()
 	msg->create.new_object = a3;
 	MGR->SendMsg(msg);
 
-	a1->target_locked = a2;
-	a2->target_locked = a3;
-	a3->target_locked = a1;
+	Path* path = new Path(4);
+	path->SetPoint(0, { 100, 800 });
+	path->SetPoint(1, { 100, 100 });
+	path->SetPoint(2, { 1500, 100 });
+	path->SetPoint(3, { 1500, 800 });
+
+	PathManager::GetInstance()->AddPath(path);
 
 	Clock clock;
 	clock.restart();
-
 	while (window.isOpen())
 	{
 		Event event;

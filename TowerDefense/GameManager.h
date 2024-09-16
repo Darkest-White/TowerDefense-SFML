@@ -7,22 +7,22 @@
 using namespace std;
 using namespace sf;
 
-class Manager
+class GameManager
 {
 private:
-	static Manager* instance;	
+	static GameManager* instance;	
 
 	list<GameObject*> objs;
 	list<MSG*> msgs;
 
-	Manager();
-	~Manager();
+	GameManager();
+	~GameManager();
 
 public:
-	static Manager* GetInstance();
+	static GameManager* GetInstance();
 	static void Destroy();
 
 	void Update(float dt);
 	void SendMsg(MSG* m);
 	void DrawObjects(RenderWindow& window);
-};
+}; // чекнуть GetType

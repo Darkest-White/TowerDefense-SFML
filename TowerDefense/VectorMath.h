@@ -8,6 +8,8 @@ Vector2f Normalize(Vector2f vector);
 
 float GetLenght(Vector2f vector);
 
+float GetDistance(Vector2f a, Vector2f b);
+
 Vector2f ChangeLenght(Vector2f vector, float new_lenght);
 
 Vector2f operator-(Vector2f a, Vector2f b);

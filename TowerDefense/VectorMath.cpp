@@ -13,6 +13,11 @@ float GetLenght(Vector2f vector)
 	return sqrt(vector.x * vector.x + vector.y * vector.y);
 }
 
+float GetDistance(Vector2f a, Vector2f b)
+{
+	return sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
+}
+
 Vector2f ChangeLenght(Vector2f vector, float new_lenght)
 {
 	float lenght = sqrt(vector.x * vector.x + vector.y * vector.y);

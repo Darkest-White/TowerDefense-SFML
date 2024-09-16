@@ -1,19 +1,24 @@
 #pragma once
 #include "GameObject.h"
+#include "VectorMath.h"
+#include "GameManager.h"
 
 class Enemy : public GameObject
 {
 protected:
-	float max_hp, hp;
+	float max_hp, current_hp;
 	float velocity;
 	Vector2f direction;
 	int damage_to_player;
 	int loot;
 
-public:
-	Enemy();
-	Enemy(const Enemy&);
-	~Enemy();
+	Path* path;
+	int path_point_index;
 
-	virtual void Move(float dt);
+public:
+	Enemy(Vector2f position, float size_radius, Texture* texture, 
+		float max_hp, float velocity, int damage_to_player, int loot, Path* path);
+	virtual ~Enemy();
+
+	virtual bool Move(float dt);
 };

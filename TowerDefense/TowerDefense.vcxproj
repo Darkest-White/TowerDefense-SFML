@@ -132,10 +132,12 @@
   <ItemGroup>
     <ClCompile Include="Arrow.cpp" />
     <ClCompile Include="ArrowTower.cpp" />
+    <ClCompile Include="Boar.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="MSG.cpp" />
+    <ClCompile Include="Path.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Tower.cpp" />
@@ -144,10 +146,12 @@
   <ItemGroup>
     <ClInclude Include="Arrow.h" />
     <ClInclude Include="ArrowTower.h" />
+    <ClInclude Include="Boar.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Manager.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="MSG.h" />
+    <ClInclude Include="Path.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="Tower.h" />
     <ClInclude Include="VectorMath.h" />

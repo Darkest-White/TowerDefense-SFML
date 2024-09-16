@@ -1,9 +1,11 @@
 #pragma once
 #include "Tower.h"
+#include "GameManager.h"
+#include <algorithm>
 
 class ArrowTower : public Tower
 {
-public:
+protected:
 	GameObject* target_locked = nullptr;
 
 public:

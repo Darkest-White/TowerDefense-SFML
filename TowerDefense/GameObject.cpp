@@ -3,7 +3,7 @@
 int GameObject::lastID = 0;
 
 Texture* GameObject::LoadTexture(const char* filename, const IntRect& source_box)
-{
+{ //!!!!!!!!!!!!!!!!!!!!!
 	Texture* texture = new Texture();
 	if (texture->loadFromFile(filename, source_box))
 	{
@@ -33,14 +33,9 @@ GameObject::GameObject(Vector2f position, float size_radius, Texture* texture, O
 	sprite.setOrigin(texture_size.x / 2, texture_size.y / 2);
 }
 
-GameObject::GameObject(const GameObject&)
-{
-
-}
-
 GameObject::~GameObject()
 {
-
+	
 }
 
 void GameObject::SetPosition(Vector2f new_pos)

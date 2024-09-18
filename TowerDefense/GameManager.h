@@ -10,7 +10,7 @@ using namespace sf;
 class GameManager
 {
 private:
-	static GameManager* instance;	
+	static GameManager* instance;
 
 	list<GameObject*> objs;
 	list<MSG*> msgs;
@@ -22,7 +22,9 @@ public:
 	static GameManager* GetInstance();
 	static void Destroy();
 
+	void spawnEnemy(float dt);
+
 	void Update(float dt);
 	void SendMsg(MSG* m);
 	void DrawObjects(RenderWindow& window);
-}; // чекнуть GetType
+};

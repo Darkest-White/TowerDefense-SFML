@@ -1,7 +1,9 @@
 #include "GameManager.h"
-// костыль
+//!!!!!!!!!!!!!!!
 #include"Enemy.h"
 #include"Boar.h"
+#include"Tower.h"
+#include"ArrowTower.h"
 
 GameManager* GameManager::instance = nullptr;
 
@@ -33,18 +35,7 @@ GameManager* GameManager::GetInstance()
 
 void GameManager::Update(float dt)
 {
-	// костыль
-	static float cooldown = 0; //!!!!!!!!
-	if (cooldown > 0) cooldown -= dt; //!!!!!!!!
-	if (Keyboard::isKeyPressed(Keyboard::Key::Space) && cooldown <= 0) //!!!!!!!!
-	{
-		cooldown = 0.3; //!!!!!!!!
-		MSG* msg = new MSG;
-		msg->type = MsgType::Create;
-		Boar* b = new Boar(100, 170, 1, 10, PathManager::GetInstance()->GetPath(0));
-		msg->create.new_object = b;
-		SendMsg(msg);
-	}
+	spawnEnemy(dt);
 
 	for (auto obj : objs)
 	{
@@ -85,7 +76,6 @@ void GameManager::Update(float dt)
 				obj->SendMSG(m);
 			}
 		}
-
 		delete m;
 	}
 }
@@ -107,4 +97,19 @@ void GameManager::Destroy()
 {
 	if (instance) delete instance;
 	instance = nullptr;
+}
+
+void GameManager::spawnEnemy(float dt)
+{
+	static float cooldown = 0;
+	if (cooldown > 0) cooldown -= dt;
+	if (Keyboard::isKeyPressed(Keyboard::Key::Space) && cooldown <= 0)
+	{
+		cooldown = 0.3;
+		MSG* msg = new MSG;
+		msg->type = MsgType::Create;
+		Boar* b = new Boar(100, 170, 1, 10, PathManager::GetInstance()->GetPath(0));
+		msg->create.new_object = b;
+		SendMsg(msg);
+	}
 }

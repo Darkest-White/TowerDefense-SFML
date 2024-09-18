@@ -27,7 +27,6 @@ public:
 	static int GetLastID();
 
 	GameObject(Vector2f position, float size_radius, Texture* texture, ObjType type);
-	GameObject(const GameObject&);
 	virtual ~GameObject();
 
 	void SetPosition(Vector2f new_pos);
